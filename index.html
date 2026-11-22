@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TemplateHub — A home for every website you build</title>
+<meta name="description" content="A curated launchpad for website templates and experiments. Explore the collection and open any project in one click.">
+<meta name="theme-color" content="#0f131a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f131a'/%3E%3Crect x='14' y='14' width='16' height='16' rx='4' fill='%23c6ff3d'/%3E%3Crect x='34' y='14' width='16' height='16' rx='4' fill='%23c6ff3d' opacity='.55'/%3E%3Crect x='14' y='34' width='16' height='16' rx='4' fill='%23c6ff3d' opacity='.55'/%3E%3Crect x='34' y='34' width='16' height='16' rx='4' fill='%23c6ff3d' opacity='.3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#collection">Skip to projects</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="TemplateHub home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>TemplateHub</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a class="btn btn-small" href="#collection">Browse</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <h1>A home for every website you build.</h1>
+      <p class="lede">A curated launchpad for my website templates and experiments. Explore the collection, find a design, and open any project in one click.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#collection">Browse Collection</a>
+        <div class="count" aria-live="polite"><strong id="totalCount">0</strong><span>projects in the collection</span></div>
+      </div>
+    </div>
+    <aside class="hero-index" aria-label="Projects by category">
+      <h2>Jump to a category</h2>
+      <ul id="catIndex"></ul>
+    </aside>
+  </section>
+
+  <section class="collection wrap" id="collection">
+    <div class="tools">
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label class="sr" for="q">Search projects</label>
+        <input id="q" type="search" placeholder="Search by name, description or category" autocomplete="off">
+      </div>
+      <p class="results" id="results" role="status" aria-live="polite"></p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+      <p>No projects match <q id="emptyTerm"></q> in this category.</p>
+      <button class="btn btn-ghost" id="reset" type="button">Clear search and filters</button>
+    </div>
+  </section>
+
+  <section class="about wrap" id="about">
+    <h2>How this collection works</h2>
+    <div class="about-grid">
+      <p>Each website template lives in its own folder under <code>projects/</code> and opens in a new tab straight from the card. Nothing is rewritten, so every template behaves exactly like the original.</p>
+      <p>Two entries need more than a click. The Dance Website runs on Node.js, and Notifies is a Chrome extension. Their cards open step-by-step instructions instead.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>TemplateHub</span></a>
+        <p class="foot-note">One page for every template, experiment and prototype.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="#collection">Collection</a>
+        <a href="#about">About</a>
+        <a href="#top">Back to top</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year">2026</span> TemplateHub. Individual templates keep their original licenses.</p>
+      <p class="dev">Developed by <strong>PythosX</strong></p>
+    </div>
+  </div>
+</footer>
+
+<dialog id="modal" aria-labelledby="modalTitle">
+  <div class="modal-in">
+    <button class="modal-x" id="modalClose" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <h2 id="modalTitle"></h2>
+    <p class="modal-intro" id="modalIntro"></p>
+    <ol class="steps" id="modalSteps"></ol>
+    <p class="modal-note" id="modalNote"></p>
+  </div>
+</dialog>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
